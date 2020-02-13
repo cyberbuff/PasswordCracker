@@ -3,6 +3,7 @@ import binascii
 import string
 import sys
 
+Windows
 # str = "Jason:502:aad3c435b514a4eeaad3b935b51304fe:c46b9e588fa0d112de6f59fd6d58eae3:::"
 # #
 # # 0 - Username
@@ -58,6 +59,17 @@ def isPasswordFileGiven():
         return (sys.argv[1] is not None)
     except:
         return False
+
+#Breaking Linux Shadow File
+def breakLinuxHash(file):
+    try:
+        with open(file,'r') as f:
+            content = f.readlines()
+
+
+    except:
+        print("File doesn't exist")
+
 
 if __name__ == '__main__':
     if(not isPasswordFileGiven()):
